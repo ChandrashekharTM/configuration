@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    discovery:
+      client:
+        simple:
+          instances:
+            restService:
+              - uri: http://localhost:9999
+                metadata:
+                  management.context-path: /actuator
+              - uri: http://localhost:9991
+                metadata:
+                  management.context-path: /actuator
+            configServer:
+              - uri: http://localhost:8888
+                metadata:
+                  management.context-path: /actuator
+            appAdminServer:
+              - uri: http://localhost:7777
+                metadata:
+                  management.context-path: /actuator      
+                  
